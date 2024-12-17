@@ -1,0 +1,189 @@
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #ff6a00, #ee0979, #ff6a00);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    text-align: center;
+    color: #333;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Header */
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 1em 0;
+    margin-bottom: 20px;
+}
+
+/* Button */
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 5px #28a745, 0 0 10px #28a745, 0 0 20px #28a745;
+}
+
+button:hover {
+    background-color: #218838;
+    box-shadow: 0 0 15px #218838, 0 0 30px #218838, 0 0 50px #218838;
+}
+
+/* Game Selection */
+.game-selection {
+    margin: 20px 0;
+}
+
+.game-selection button {
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.game-selection button:hover {
+    transform: scale(1.1);
+    background-color: #45a049;
+}
+
+/* Game Area (Pop-in Animation) */
+.game-area {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 500px;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: scale(0.8);
+    animation: popIn 1s forwards;
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Tic-Tac-Toe Grid */
+.tic-tac-toe {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin: auto;
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+/* Hover effect on Tic-Tac-Toe cells */
+.cell:hover {
+    background-color: #ddd;
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+.cell.taken {
+    cursor: not-allowed;
+    background-color: #ddd;
+}
+
+/* Moving Text - Floating Effect */
+.moving-text {
+    position: absolute;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    z-index: 999;
+    animation: moveAround 10s linear infinite;
+}
+
+@keyframes moveAround {
+    0% {
+        top: 10%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+    }
+    25% {
+        top: 10%;
+        left: 90%;
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        top: 90%;
+        left: 90%;
+        transform: translate(-50%, -50%);
+    }
+    75% {
+        top: 90%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        top: 10%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+    }
+}
+.footer-text {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .footer-text p {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icon img {
+    width: 40px; /* You can adjust the size of the icons */
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Adds a smooth effect when hovering */
+  }
+  
+  .social-icon img:hover {
+    transform: scale(1.1); /* Slightly enlarges the icon on hover */
+  }
+  
